@@ -10,6 +10,7 @@ export const userInputs = [
       label: "Name and surname",
       type: "text",
       placeholder: "John Doe",
+      filter:true
     },
     {
       id: 3,

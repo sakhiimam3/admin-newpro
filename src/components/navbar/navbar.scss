@@ -6,6 +6,12 @@
   font-size: 14px;
   color: #555;
 
+
+ 
+
+
+
+
   .wrapper {
     width: 100%;
     padding: 20px;
@@ -67,34 +73,11 @@
           right: -5px;
            cursor: pointer;
         }
-        .list_Notification{
-              position: absolute;
-              top: 30px;
-              left:-50px ;
-              background-color: rgb(244, 239, 239);
-              color: rgb(28, 24, 24);
-              width: 200px;
-              z-index: 2;
-              box-shadow: 5px 1px 1px 0.5px grey;
-              
-              ul{
-                  list-style: none;
-                  font-size: 18px;
-                  padding: 10px;
-                  cursor: pointer;
-                  li{
-                      margin: 10px 0;
-                      padding: 5px;
-                      &:hover{
-                          background-color: grey;
-                          color: wheat;
-                          
-                      }
-                  }
-              }
-
-        }
+      
       }
     }
   }
+  
 }
+
+

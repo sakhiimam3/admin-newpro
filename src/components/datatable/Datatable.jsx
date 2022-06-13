@@ -1,16 +1,19 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns, userRows } from "../../datatablesource";
+import { userColumns } from "../../datatablesource";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Mockdata from "../../MOCK_DATA.json";
 
 const Datatable = () => {
-  const [data, setData] = useState(userRows);
+  const [data, setData] = useState([]);
+  const [page, setPage] = useState(0);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
 
+ 
   const actionColumn = [
     {
       field: "action",
@@ -33,6 +36,13 @@ const Datatable = () => {
       },
     },
   ];
+
+
+    // set data on page load 
+  useEffect(() => {
+    setData(Mockdata);
+  }, [page]);
+
   return (
     <div className="datatable">
       <div className="datatableTitle">
@@ -48,6 +58,8 @@ const Datatable = () => {
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
+        onPageChange={(page) => setPage(page)}
+        
       />
     </div>
   );
