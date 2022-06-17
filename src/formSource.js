@@ -1,45 +1,60 @@
 export const userInputs = [
     {
       id: 1,
-      label: "Username",
+      label: "Name",
       type: "text",
-      placeholder: "john_doe",
+      placeholder: "Name",
+      name:'Name',
+      value:""
     },
     {
       id: 2,
-      label: "Name and surname",
+      label: "Title",
       type: "text",
-      placeholder: "John Doe",
-      filter:true
+      placeholder: "Title",
+      filter:true,
+      name:"Title",
+      value:""
     },
     {
       id: 3,
-      label: "Email",
-      type: "mail",
-      placeholder: "john_doe@gmail.com",
+      label: "Location",
+      type: "text",
+      placeholder: "Location",
+      name:"Location",
+      value:""
     },
     {
       id: 4,
-      label: "Phone",
+      label: "Birth",
       type: "text",
-      placeholder: "+1 234 567 89",
+      placeholder: "Birth",
+      name:"Birth",
+      value:""
     },
     {
       id: 5,
-      label: "Password",
-      type: "password",
+      label: "Sallary",
+      type: "text",
+      placeholder: "Sallary",
+      name:"Sallary",
+      value:""
     },
     {
       id: 6,
-      label: "Address",
+      label: "Country",
       type: "text",
-      placeholder: "Elton St. 216 NewYork",
+      placeholder: "eg : Pakistan",
+      name:'country',
+      value:""
     },
     {
       id: 7,
-      label: "Country",
+      label: "Gender",
       type: "text",
-      placeholder: "USA",
+      placeholder: "Male/Female",
+      name:"Gender",
+      value:""
     },
   ];
   

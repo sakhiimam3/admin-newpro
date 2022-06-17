@@ -6,6 +6,7 @@ import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlin
 import { DarkModeContext } from "../../context/darkModeContext";
 import React, { useContext ,useState} from "react";
 import NotificationList from "../Notifications/Notification"
+import LongMenu from "../Notifications/Notification2";
 
 
 
@@ -45,7 +46,7 @@ const Navbar = () => {
           </div>
           <div className="item">
             
-                 <NotificationList />   
+              <LongMenu />   
           </div>
         
         

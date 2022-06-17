@@ -1,3 +1,11 @@
+
+
+@mixin flexprop {
+    display: flex;
+    align-items: center;
+}
+
+
 .datatable {
   height: 600px;
   padding: 20px;
@@ -24,8 +32,7 @@
   }
 
   .cellWithImg {
-    display: flex;
-    align-items: center;
+   @include  flexprop();
 
     .cellImg {
       width: 32px;
@@ -55,9 +62,11 @@
   }
 
   .cellAction {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    @include  flexprop();
+    gap: 12px;
+    &.focus{
+        outline: none !important;
+    }
 
     .viewButton {
       padding: 2px 5px;
@@ -65,6 +74,7 @@
       color: darkblue;
       cursor: pointer;
       outline: none !important;
+      @include  flexprop();
     }
     
     .deleteButton {
@@ -73,6 +83,30 @@
       color: crimson;
       cursor: pointer;
       outline: none !important;
+      @include  flexprop();
+    }
+
+    .Edit,.save{
+     
+      border-radius: 5px;
+      color: rgb(69, 136, 31);
+      cursor: pointer;
+      outline: none !important;
+      @include  flexprop();
     }
   }
+
+  .render_row{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-wrap: wrap;
+  }
+
+  
+
+}
+
+.dialog{
+       background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0.9));
 }

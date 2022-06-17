@@ -7,9 +7,10 @@ import ListItemText from '@mui/material/ListItemText';
 
 
 
-const Notification = ({ count }) => {
+const Notification = () => {
+
     //    popover states
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] =useState(null);
   
     const [Noti, setNoti] = useState([
         {
@@ -42,6 +43,8 @@ const Notification = ({ count }) => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
 
@@ -88,7 +91,7 @@ const Notification = ({ count }) => {
                             return (
                                 <div
                                     key={index}
-                                    className={'dropdown notification' + index}
+                                    className='dropdown notification'
                                 style={{minWidth:'100px',minHeight:'80px'}}
                                     >
                                     <ListItem onClick={() => handleRead(index)}>

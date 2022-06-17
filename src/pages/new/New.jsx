@@ -3,9 +3,59 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
+import axios from "axios";
 
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
+  const [input,setInput]=useState({
+
+    Name:"",
+    Title:"",
+    Location :"",
+    Birth:"",
+    Sallary:"",
+    Country:"",
+    Gender:""
+
+  })
+
+// input change handler function 
+const handleInputChange =(event)=>{
+  const { name, value } = event.target;
+
+  setInput((prevState) => {
+    return {
+      ...prevState,
+      [name]: value,
+    };
+  });
+}
+
+
+// add data to json server 
+
+const addNew = async (e) => {
+  e.preventDefault()
+  try {
+  await axios.post(`http://localhost:3000/data`,input);
+   
+  } catch (error) {
+    console.log(error);
+  }
+  setInput([...input,{
+  Name:"",
+  Title:"",
+  Location :"",
+  Birth:"",
+  Sallary:"", 
+  Country:"",
+  Gender:""}])
+};
+
+
+
+
+
 
   return (
     <div className="new">
@@ -40,13 +90,14 @@ const New = ({ inputs, title }) => {
                 />
               </div>
 
-              {inputs.map((input) => (
+              {inputs.map((input,index) => (
                 <div className="formInput" key={input.id}>
                   <label>{input.label}</label>
-                  <input type={input.type} placeholder={input.placeholder} />
+              
+                  <input type={input.type} placeholder={input.placeholder}  value={input[index]}  name={input.name} onChange={handleInputChange} />
                 </div>
               ))}
-              <button>Send</button>
+              <button onClick={addNew}>Send</button>
             </form>
           </div>
         </div>

@@ -1,5 +1,5 @@
 .app.dark {
-  background-color: #111;
+  background-color: #121212;
   color: rgb(156, 156, 156);
 
   .chartGrid {
@@ -56,6 +56,7 @@
 
       .viewButton,
       .deleteButton,
+       .Edit,
       .cellWithStatus {
         color: gray;
         border: none;
@@ -67,3 +68,5 @@
       background-color: transparent;
   }
 }
+
+
